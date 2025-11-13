@@ -1,9 +1,10 @@
 package entites;
 
 public class Personne {
-    String nom;
-    String prenom;
-    AdressePostale adressePostale;
+
+    private String nom;
+    private String prenom;
+    private AdressePostale adressePostale;
 
     public Personne(String nom, String prenom) {
 

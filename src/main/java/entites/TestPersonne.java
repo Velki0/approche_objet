@@ -13,7 +13,7 @@ public class TestPersonne {
         Personne secondePersonne = new Personne("Mustermann", "Fabien");
         secondePersonne.setAdressePostale(secondeAdresse);
         secondePersonne.afficherPersonne();
-        System.out.println(secondePersonne.adressePostale.codePostale);
+        System.out.println(secondePersonne.getAdressePostale().getCodePostal());
 
     }
 }
