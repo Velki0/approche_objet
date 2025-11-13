@@ -1,29 +1,13 @@
 package entites;
 
-import entites2.Personne;
-
 public class TestPersonne {
 
     public static void main(String[] args) {
-        Personne premierePersonne = new Personne();
-        Personne secondePersonne = new Personne();
 
-        AdressePostale premiereAdresse = new AdressePostale();
-        AdressePostale secondeAdresse = new AdressePostale();
-        premiereAdresse.numeroRue = 3;
-        premiereAdresse.libelleRue = "rue des lilas";
-        premiereAdresse.codePostale = 52340;
-        premiereAdresse.ville = "Ageville";
-        secondeAdresse.numeroRue = 51;
-        secondeAdresse.libelleRue = "rue des tulipes";
-        secondeAdresse.codePostale = 31820;
-        secondeAdresse.ville = "Pibrac";
+        AdressePostale premiereAdresse = new AdressePostale(3, "rue des lilas", 52340, "Ageville");
+        AdressePostale secondeAdresse = new AdressePostale(51, "rue des tulipes", 31820, "Pibrac");
+        Personne premierePersonne = new Personne("Blanc", "Michel", premiereAdresse);
+        Personne secondePersonne = new Personne("Mustermann", "Fabien", secondeAdresse);
 
-        premierePersonne.nom = "Blanc";
-        premierePersonne.prenom = "Michel";
-        premierePersonne.adressePostale = premiereAdresse;
-        secondePersonne.nom = "Mustermann";
-        secondePersonne.prenom = "Fabien";
-        secondePersonne.adressePostale = secondeAdresse;
     }
 }
