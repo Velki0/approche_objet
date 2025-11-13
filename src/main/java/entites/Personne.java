@@ -19,4 +19,17 @@ public class Personne {
         this.adressePostale = adressePostale;
 
     }
+
+    public void afficherPersonne() {
+        System.out.println("Cette personne s'appelle : " + prenom + " " + nom);
+    }
+
+    public String getNom() { return nom; }
+    public String getPrenom() { return prenom; }
+    public AdressePostale getAdressePostale() { return adressePostale; }
+
+    public void setNom(String nom) { this.nom = nom; }
+    public void setPrenom(String prenom) { this.prenom = prenom; }
+    public void setAdressePostale(AdressePostale adressePostale) { this.adressePostale = adressePostale; }
+
 }
