@@ -21,9 +21,7 @@ public class Personne {
 
     }
 
-    public void afficherPersonne() {
-        System.out.println("Cette personne s'appelle : " + prenom + " " + nom);
-    }
+    public void afficherPersonne() { System.out.println("Cette personne s'appelle : " + prenom + " " + nom); }
 
     public String getNom() { return nom; }
     public String getPrenom() { return prenom; }
