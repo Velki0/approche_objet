@@ -1,6 +1,6 @@
 package encapsulation;
 
-public class TestCompte {
+public class TestBanque {
 
     public static void main(String[] args) {
 
@@ -9,6 +9,8 @@ public class TestCompte {
         compteDeJean.setSoldeCompte(20000);
         System.out.println("Numéro de compte de Jean: " + compteDeJean.getNumeroCompte());
         System.out.println("Solde du compte de Jean: " + compteDeJean.getSoldeCompte());
+
+        System.out.println(compteDeJean);
 
     }
 }

@@ -16,4 +16,11 @@ public class Compte {
     public void setNumeroCompte(int numeroCompte) { this.numeroCompte = numeroCompte; }
     public void setSoldeCompte(int soldeCompte) {this.soldeCompte = soldeCompte; }
 
+    public String toString() {
+        return "Compte { " +
+                "numeroCompte = " + numeroCompte +
+                ", soldeCompte = " + soldeCompte +
+                " }";
+    }
+
 }
