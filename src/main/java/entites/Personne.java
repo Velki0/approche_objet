@@ -5,6 +5,13 @@ public class Personne {
     String prenom;
     AdressePostale adressePostale;
 
+    public Personne(String nom, String prenom) {
+
+        this.nom = nom;
+        this.prenom = prenom;
+
+    }
+
     public Personne(String nom, String prenom, AdressePostale adressePostale) {
 
         this.nom = nom;
