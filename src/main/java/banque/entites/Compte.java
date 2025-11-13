@@ -1,4 +1,4 @@
-package encapsulation;
+package banque.entites;
 
 public class Compte {
 
