@@ -2,7 +2,7 @@ package banque.entites;
 
 public class CompteTaux extends Compte {
 
-    private float tauxRemunerations;
+    private final float tauxRemunerations;
 
     public CompteTaux(int numeroCompte, int soldeCompte, float tauxRemunerations) {
 

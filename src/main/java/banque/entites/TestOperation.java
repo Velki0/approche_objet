@@ -7,10 +7,10 @@ public class TestOperation {
     public static void main(String[] args) {
 
         // TP08
-        Operation premiereOperation = new Credit("03/08/2025", 3000);
-        Operation deuxiemeOperation = new Debit("04/08/2025", 4020.22f);
-        Operation troisiemeOperation = new Debit("05/08/2025", 50.10f);
-        Operation quatriemeOperation = new Credit("06/08/2025", 1234.56f);
+        Credit premiereOperation = new Credit("03/08/2025", 3000);
+        Debit deuxiemeOperation = new Debit("04/08/2025", 4020.22f);
+        Debit troisiemeOperation = new Debit("05/08/2025", 50.10f);
+        Credit quatriemeOperation = new Credit("06/08/2025", 1234.56f);
         Operation[] tableauOperations = new Operation[4];
         tableauOperations[0] = premiereOperation;
         tableauOperations[1] = deuxiemeOperation;

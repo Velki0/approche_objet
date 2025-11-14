@@ -1,9 +1,9 @@
 package banque.entites;
 
-public class Operation {
+public abstract class Operation {
 
-    private final String dateOperation;
-    private final float montantOperation;
+    protected String dateOperation;
+    protected float montantOperation;
 
     public Operation(String dateOperation, float montantOperation) {
 
@@ -15,6 +15,6 @@ public class Operation {
     public String getDateOperation() { return dateOperation; }
     public float getMontantOperation() { return montantOperation; }
 
-    public String getType() { return null; }
+    public abstract String getType();
 
 }
