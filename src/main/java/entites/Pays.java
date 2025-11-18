@@ -14,7 +14,10 @@ public class Pays {
 
     public boolean equals(Pays pays) {
 
-        return this.nom.equals(pays.nom) && this.population == pays.population;
+        if (!(pays instanceof Pays)) {
+            return false;
+        }
+        return this.nom.equals(((Pays) pays).nom);
 
     }
 
