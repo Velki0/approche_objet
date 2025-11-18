@@ -4,22 +4,16 @@ import fr.diginamic.combat.entites.Personnage;
 import java.util.Scanner;
 
 import static fr.diginamic.combat.operations.Combat.*;
+import static fr.diginamic.combat.operations.CreationPersonnage.*;
 
 public class Jeu {
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
-        System.out.println(
-                "-----------------------------------------------------------------------------------------------------\n" +
-                "                      Bienvenue dans le jeu de rôle Chevalier contre Monstres                        \n" +
-                "                           Veullier choisir un nom à votre chevalier !                               "
-        );
-        Personnage personnage = new Personnage(scanner.nextLine());
-        personnage.getFichePersonnage();
-
+        Personnage personnage = creationPersonnage();
         int choixUtilisateur = 0;
         int round = 1;
+        Scanner scanner = new Scanner(System.in);
         while (personnage.getSante() > 0 && choixUtilisateur !=5) {
 
             do {
@@ -54,6 +48,7 @@ public class Jeu {
             }
 
         }
+        scanner.close();
 
     }
 

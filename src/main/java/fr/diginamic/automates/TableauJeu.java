@@ -38,88 +38,17 @@ public class TableauJeu {
 
     private boolean getValeurCellule(int ligne, int colonne) {
 
-        return cellules.get(ligne).get(colonne).getEnVie();
+        if (ligne >= 0 && colonne >= 0 && ligne < lignesTotales && colonne < colonnesTotales) {
+            return cellules.get(ligne).get(colonne).getEnVie();
+        } else  {
+            return false;
+        }
 
     }
 
     private int compterVoisins(int ligne, int colonne) {
 
         int compteurVoisins = 0;
-        // Cas des 4 coins
-        if (ligne == 0 && colonne == 0) {
-            for (int x = 0; x <= 1; x++) {
-                for (int y = 0; y <= 1; y++) {
-                    if (getValeurCellule(x, y)) {
-                        compteurVoisins++;
-                    }
-                }
-            }
-        }
-        if (ligne == 0 && colonne == colonnesTotales - 1) {
-            for (int x = 0; x <= 1; x++) {
-                for (int y = colonnesTotales - 2; y <= colonnesTotales - 1; y++) {
-                    if (getValeurCellule(x, y)) {
-                        compteurVoisins++;
-                    }
-                }
-            }
-        }
-        if (ligne == lignesTotales - 1 && colonne == 0) {
-            for (int x = lignesTotales - 2; x <= lignesTotales - 1; x++) {
-                for (int y = 0; y <= 1; y++) {
-                    if (getValeurCellule(x, y)) {
-                        compteurVoisins++;
-                    }
-                }
-            }
-        }
-        if (ligne == lignesTotales - 1 && colonne == colonnesTotales - 1) {
-            for (int x = lignesTotales - 2; x <= lignesTotales - 1; x++) {
-                for (int y = colonnesTotales - 2; y <= colonnesTotales - 1; y++) {
-                    if (getValeurCellule(x, y)) {
-                        compteurVoisins++;
-                    }
-                }
-            }
-        }
-        // Cas des bords
-        if (ligne == 0 && colonne != 0 && colonne != colonnesTotales - 1) {
-            for (int x = 0; x <= 1; x++) {
-                for (int y = colonne - 1; y <= colonne + 1; y++) {
-                    if (getValeurCellule(x, y)) {
-                        compteurVoisins++;
-                    }
-                }
-            }
-        }
-        if (ligne == lignesTotales - 1 && colonne != 0 && colonne != colonnesTotales - 1) {
-            for (int x = lignesTotales - 2; x <= lignesTotales - 1; x++) {
-                for (int y = colonne - 1; y <= colonne + 1; y++) {
-                    if (getValeurCellule(x, y)) {
-                        compteurVoisins++;
-                    }
-                }
-            }
-        }
-        if (ligne != 0 && ligne != lignesTotales - 1 && colonne == 0) {
-            for (int x = ligne - 1; x <= ligne + 1; x++) {
-                for (int y = 0; y <= 1; y++) {
-                    if (getValeurCellule(x, y)) {
-                        compteurVoisins++;
-                    }
-                }
-            }
-        }
-        if (ligne != 0 && ligne != lignesTotales - 1 && colonne == colonnesTotales - 1) {
-            for (int x = ligne - 1; x <= ligne + 1; x++) {
-                for (int y = colonnesTotales - 2; y <= colonnesTotales - 1; y++) {
-                    if (getValeurCellule(x, y)) {
-                        compteurVoisins++;
-                    }
-                }
-            }
-        }
-        // Cas du milieu de tableau
         if (ligne > 0 && ligne < lignesTotales - 1 && colonne > 0 && colonne < colonnesTotales - 1) {
             for (int x = ligne - 1; x <= ligne + 1; x++) {
                 for (int y = colonne - 1; y <= colonne + 1; y++) {
@@ -162,7 +91,7 @@ public class TableauJeu {
 
         for (int x = 0; x < lignesTotales; x++) {
             for (int y = 0; y < colonnesTotales; y++) {
-                setProchainEtatCellule(x,y);
+                setProchainEtatCellule(x, y);
             }
         }
 

@@ -11,8 +11,6 @@ public class JeuDeLaVie {
 
         TableauJeu tableauJeu =  new TableauJeu(lignesTotales, colonnesTotales);
 
-        tableauJeu.afficherTableauJeu();
-
         while(true){
             tableauJeu.setProchainEtatTableau();
             tableauJeu.setEtatTableau();

@@ -7,7 +7,7 @@ import fr.diginamic.combat.entites.Potion;
 import static fr.diginamic.combat.entites.TypePotion.*;
 import static fr.diginamic.combat.operations.Aleatoire.*;
 
-public class Combat {
+public abstract class Combat {
 
     public static void combattre(Personnage personnage) {
 

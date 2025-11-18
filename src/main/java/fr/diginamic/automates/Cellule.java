@@ -6,7 +6,9 @@ public class Cellule {
     private boolean prochainEtat;
 
     public Cellule() {
+
         aleatoireEnVie();
+
     }
 
     public boolean getEnVie() { return enVie; }

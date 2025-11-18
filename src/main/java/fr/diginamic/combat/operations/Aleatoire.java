@@ -1,6 +1,6 @@
 package fr.diginamic.combat.operations;
 
-public class Aleatoire {
+public abstract class Aleatoire {
 
     public static int choixAleatoire(int valeurMin, int valeurMax) {
 
