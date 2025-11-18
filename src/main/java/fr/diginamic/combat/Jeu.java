@@ -43,8 +43,6 @@ public class Jeu {
                 case 4:
                     personnage.afficherScore();
                     break;
-                case 5:
-                    break;
             }
 
         }
