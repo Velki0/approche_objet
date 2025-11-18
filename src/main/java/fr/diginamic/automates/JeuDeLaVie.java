@@ -6,14 +6,14 @@ public class JeuDeLaVie {
 
     public static void main(String[] args) throws InterruptedException {
 
-        final int lignesTotales = 20;
-        final int colonnesTotales = 50;
+        final int lignesTotales = 30;
+        final int colonnesTotales = 100;
 
         TableauJeu tableauJeu =  new TableauJeu(lignesTotales, colonnesTotales);
 
         while(true){
-            tableauJeu.setProchainEtatTableau();
-            tableauJeu.setEtatTableau();
+            tableauJeu.setProchainTableau();
+            tableauJeu.setTableau();
             TimeUnit.SECONDS.sleep(1);
             tableauJeu.afficherTableauJeu();
         }

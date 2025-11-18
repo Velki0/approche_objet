@@ -66,48 +66,36 @@ public class TableauJeu {
 
     }
 
-    private void setProchainEtatCellule(int ligne, int colonne) {
-
-        switch (compterVoisins(ligne, colonne)) {
-            // Survie à 2 voisins
-            case 2:
-                if (getValeurCellule(ligne, colonne)) {
-                    cellules.get(ligne).get(colonne).setProchainEtat(true);
-                }
-                break;
-            // Survie à 2 voisins ou naissance
-            case 3:
-                cellules.get(ligne).get(colonne).setProchainEtat(true);
-                break;
-            // Mort dans tous les autres cas
-            default:
-                cellules.get(ligne).get(colonne).setProchainEtat(false);
-                break;
-        }
-
-    }
-
-    public void setProchainEtatTableau() {
+    public void setProchainTableau() {
 
         for (int x = 0; x < lignesTotales; x++) {
             for (int y = 0; y < colonnesTotales; y++) {
-                setProchainEtatCellule(x, y);
+                switch (compterVoisins(x, y)) {
+                    // Survie à 2 voisins
+                    case 2:
+                        if (getValeurCellule(x, y)) {
+                            cellules.get(x).get(y).setProchainEtat(true);
+                        }
+                        break;
+                    // Survie à 2 voisins ou naissance
+                    case 3:
+                        cellules.get(x).get(y).setProchainEtat(true);
+                        break;
+                    // Mort dans tous les autres cas
+                    default:
+                        cellules.get(x).get(y).setProchainEtat(false);
+                        break;
+                }
             }
         }
 
     }
 
-    private void setEtatCellule(int ligne, int colonne) {
-
-        cellules.get(ligne).get(colonne).setEnVie(cellules.get(ligne).get(colonne).getProchainEtat());
-
-    }
-
-    public void setEtatTableau() {
+    public void setTableau() {
 
         for (int x = 0; x < lignesTotales; x++) {
             for (int y = 0; y < colonnesTotales; y++) {
-                setEtatCellule(x,y);
+                cellules.get(x).get(y).setEnVie(cellules.get(x).get(y).getProchainEtat());
             }
         }
 
