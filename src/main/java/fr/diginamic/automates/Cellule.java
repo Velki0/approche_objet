@@ -11,6 +11,12 @@ public class Cellule {
 
     }
 
+    public Cellule(boolean enVie) {
+
+        this.enVie = enVie;
+
+    }
+
     public boolean getEnVie() { return enVie; }
     public boolean getProchainEtat() { return prochainEtat; }
 

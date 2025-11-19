@@ -23,7 +23,24 @@ public class TableauJeu {
 
     }
 
+    public TableauJeu(List<List<Boolean>> pattern) {
+
+        this.lignesTotales = pattern.size();
+        this.colonnesTotales = pattern.getFirst().size();
+        cellules = new ArrayList<>();
+        List<Cellule> ligneCellules;
+        for (int x = 0; x < lignesTotales; x++) {
+            ligneCellules = new ArrayList<>();
+            for (int y = 0; y < colonnesTotales; y++) {
+                ligneCellules.add(new Cellule(pattern.get(x).get(y)));
+            }
+            cellules.add(ligneCellules);
+        }
+
+    }
+
     public void afficherTableauJeu() {
+
         char etat;
         System.out.println("-------------------------------------------------Tableau Jeu-------------------------------------------------");
         for (List<Cellule> ligne : cellules) {
@@ -34,13 +51,14 @@ public class TableauJeu {
             }
             System.out.println();
         }
+
     }
 
     private boolean getValeurCellule(int ligne, int colonne) {
 
         if (ligne >= 0 && colonne >= 0 && ligne < lignesTotales && colonne < colonnesTotales) {
             return cellules.get(ligne).get(colonne).getEnVie();
-        } else  {
+        } else {
             return false;
         }
 
@@ -49,12 +67,10 @@ public class TableauJeu {
     private int compterVoisins(int ligne, int colonne) {
 
         int compteurVoisins = 0;
-        if (ligne > 0 && ligne < lignesTotales - 1 && colonne > 0 && colonne < colonnesTotales - 1) {
-            for (int x = ligne - 1; x <= ligne + 1; x++) {
-                for (int y = colonne - 1; y <= colonne + 1; y++) {
-                    if (getValeurCellule(x, y)) {
-                        compteurVoisins++;
-                    }
+        for (int x = ligne - 1; x <= ligne + 1; x++) {
+            for (int y = colonne - 1; y <= colonne + 1; y++) {
+                if (getValeurCellule(x, y)) {
+                    compteurVoisins++;
                 }
             }
         }
