@@ -20,6 +20,7 @@ public abstract class LecturePattern {
         List<String> pattern = Files.readAllLines(chemin, StandardCharsets.UTF_8);
         pattern.removeIf(ligne -> ligne.charAt(0) == '#');
         List<List<Boolean>> patternNormalise = normaliserPattern(pattern);
+        System.out.println(getLignesTotales(pattern) + getColonnesTotales(pattern));
 
         TableauJeu tableauJeu =  new TableauJeu(patternNormalise);
         while(true){
